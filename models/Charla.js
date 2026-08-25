@@ -9,4 +9,4 @@ const productoSchema = new mongoose.Schema({
   imagen: String
 });
 
-module.exports = mongoose.model('Producto', productoSchema);
+module.exports = mongoose.model('Charla', productoSchema, 'muebles');

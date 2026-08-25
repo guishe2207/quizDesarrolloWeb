@@ -10,7 +10,13 @@ app.set('view engine', 'ejs');
 app.set('views', './views');
 app.use(express.static('public'));
 
-conectarDB();
+conectarDB()
+  .then(() => {
+      console.log('✅ MongoDB conectado');
+  })
+    .catch((error) => {
+      console.error('❌ Error MongoDB:', error.message);
+  });
 
 app.use('/charlas', charlasRouter);
 
